@@ -1,0 +1,7 @@
+name: Publish Document
+account: rpubs
+server: rpubs.com
+bundleId:
+        https://api.rpubs.com/api/v1/document/143251/bc192b91d16e4b90b065094548d5f4d7
+url: http://rpubs.com/jgarcia/143251
+when: 1452818914.15801

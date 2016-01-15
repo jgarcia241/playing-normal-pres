@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playing with shiny</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Playing with shiny">
+  <meta name="author" content="Juan A. García">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/prettify/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Playing with shiny</h1>
+    <h2>An application to play with Normal distribution</h2>
+    <p>Juan A. García<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Goals on the shiny project</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The goals we want to achieve with the application are:</p>
+
+<ol>
+<li>Learn and show how to use shiny to develop web applications based on R</li>
+<li>Play with normal distribution as a way to teach my daugther how the normal distributions behaves</li>
+<li>Use slidify to show how the application works</li>
+<li>Use both this slidify presentation and the shiny application as the project for <strong>Developing Data Products</strong> project</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The shiny application</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The application is built with shiny that allows to build a server in R (<em>server.R</em>) and the front end (web page) using R (<em>ui.R</em>).</p>
+
+<p>The application allows the user to select:</p>
+
+<ul>
+<li><strong>Number</strong> of random samples</li>
+<li><strong>Mean</strong> of the normal distribution</li>
+<li><strong>Standard deviation</strong> of the distribution</li>
+<li>How to render the plot, by using a <strong>histogram</strong> or a <strong>density plot</strong>.</li>
+</ul>
+
+<p>On the main are on the right side, we have 2 tabs, one to render the plot and a second one to render a summary of the random samples.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The shiny structure</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The shiny project is built with 2 files:</p>
+
+<h3>ui.R</h3>
+
+<p>The file were we define the user interface. </p>
+
+<p>It has two sections:</p>
+
+<ul>
+<li>Main area: with two tabs were the plots and summary is rendered</li>
+<li>Left panel: where input sliders for customizable controls (mean, samples and sd) are render for the user to configure</li>
+</ul>
+
+<h3>server.R</h3>
+
+<p>The server file, gets the input values from the user interface and will render normal distribution (plot or summary), with the numebr of samples, mean and SD received from the UI.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Some code samples</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Let&#39;s see now, some of the plots in action.
+The code for generating the random values following a normal distribution and the summary of the samples would be:</p>
+
+<pre><code class="r">samples&lt;-rnorm(10000,0,1)
+summary (samples)
+</code></pre>
+
+<pre><code>##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+## -4.214000 -0.679900 -0.009522 -0.011480  0.656600  3.544000
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>More code samples</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The  render of the histogram would be: (code not displayed - echo=FALSE -)
+<img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Goals on the shiny project'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The shiny application'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The shiny structure'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Some code samples'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='More code samples'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- Google Prettify -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+  <script src='libraries/highlighters/prettify/js/lang-r.js'></script>
+  <script>
+    var pres = document.getElementsByTagName("pre");
+    for (var i=0; i < pres.length; ++i) {
+      pres[i].className = "prettyprint linenums";
+    }
+    prettyPrint();
+  </script>
+  <!-- End Google Prettify --> 
+  </html>
